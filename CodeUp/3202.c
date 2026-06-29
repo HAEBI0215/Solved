@@ -3,25 +3,25 @@
 char tree[10001];
 int len;
 
-void preorder(int idx)
+void DoRuning(int index)
 {
-    if (idx >= len)
+    if (index >= len)
         return;
 
-    printf("%c", tree[idx]);
+    printf ("%c", tree[index]);
 
-    preorder(idx * 2 + 1);
-    preorder(idx * 2 + 2); 
+    DoRuning (index * 2 + 1);
+    DoRuning (index * 2 + 2); 
 }
 
 int main()
 {
-    scanf("%s", tree);
+    scanf ("%s", tree);
 
-    while(tree[len] != '\0')
+    while (tree[len] != '\0')
         len++;
 
-    preorder(0);
+    DoRuning(0);
 
     return 0;
 }
